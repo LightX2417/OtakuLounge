@@ -11,7 +11,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    - name: List directory contents
+      run: ls -R
+      working-directory: .
+
+
     - name: Build the Docker image
-      run: |
-        docker build -t otakulounge-image:latest .
+      run: docker build -t otakulounge-image:latest .
       working-directory: .
